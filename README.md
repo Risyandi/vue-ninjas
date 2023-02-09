@@ -4,4 +4,4 @@ untuk mengenal jauh tentang jauh tentang vuejs anda bisa mengakses situs resminy
 
 # :books: To do list
 Hal-hal apa saja yang sudah dipelajari dan apa yang akan dipelajari nanti, akan di tulis di list berikut:
-- [x] Installasi Vuejs
+- :white_check_mark: Simple Nuxt Webapp SSR / SSG Mode
