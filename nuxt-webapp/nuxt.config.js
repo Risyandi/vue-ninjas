@@ -5,13 +5,28 @@ export default {
   head: {
     titleTemplate: '%s - nuxt-webapp',
     title: 'nuxt-webapp',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: ''
+      },
+      {
+        name: 'format-detection',
+        content: 'telephone=no'
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -56,7 +71,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -72,5 +87,22 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      postcssOptions: {
+        plugins: {
+          // Disable a plugin by passing false as value
+          "postcss-custom-properties": false,
+        },
+        preset: {
+          // Change the postcss-preset-env settings
+          autoprefixer: {
+            grid: true
+          }
+        }
+      }
+    }
+  },
 }
