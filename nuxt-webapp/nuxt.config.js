@@ -39,24 +39,22 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  // https://go.nuxtjs.dev/eslint and https://go.nuxtjs.dev/vuetify
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
+  // https://go.nuxtjs.dev/axios and https://go.nuxtjs.dev/pwa
   modules: [
-    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  // Workaround to avoid enforcing hard-coded localhost:3000 --> reference https://github.com/nuxt-community/axios-module/issues/308
   axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
   },
 
