@@ -26,7 +26,9 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
+
+      <!-- trigger onclick (minimize, clipped, sidebar left/right) -->
+      <!-- <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
       <v-btn icon @click.stop="clipped = !clipped">
@@ -34,19 +36,25 @@
       </v-btn>
       <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
-      </v-btn>
+      </v-btn> -->
+
       <v-toolbar-title>{{ title }}</v-toolbar-title>
       <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
+      <!-- trigger onclick 1 -->
+      <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
+
+    <!-- content nuxt child -->
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
+
+    <!-- reaction on trigger onclick 1 -->
+    <!-- <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
         <v-list-item @click.native="right = !right">
           <v-list-item-action>
@@ -55,9 +63,11 @@
           <v-list-item-title>Switch drawer (click me)</v-list-item-title>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
+
+    <!-- footer -->
     <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>&copy; copyright reserved {{ new Date().getFullYear() }} - risyandi.com</span>
     </v-footer>
   </v-app>
 </template>
@@ -81,11 +91,16 @@ export default {
           title: 'Inspire',
           to: '/inspire',
         },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Tutorial',
+          to: '/tutorial',
+        },
       ],
       miniVariant: false,
-      right: true,
+      right: false,
       rightDrawer: false,
-      title: 'Vuetify.js',
+      title: 'Lorem Ipsum',
     }
   },
 }
