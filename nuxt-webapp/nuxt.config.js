@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nuxt-webapp',
-    title: 'nuxt-webapp',
+    titleTemplate: '%s - nuxt',
+    title: 'webapp',
     meta: [{
         charset: 'utf-8'
       },
@@ -28,6 +28,12 @@ export default {
       href: '/favicon.ico'
     }],
   },
+
+  // Static sites the target 
+  target: 'static',
+
+  // Disable Server Side rendering
+  ssr: false,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -109,7 +115,7 @@ export default {
     }
   },
 
-   // Router
+  // Router
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
