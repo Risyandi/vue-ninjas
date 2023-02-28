@@ -33,7 +33,9 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    "~/plugins/mixins.js",
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -57,6 +59,9 @@ export default {
   axios: {
     baseURL: '/',
   },
+
+  // Disable Nuxt collects anonymous telemetry 
+  telemetry: false,
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -101,6 +106,17 @@ export default {
           }
         }
       }
+    }
+  },
+
+   // Router
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'notFound',
+        path: '*',
+        component: resolve(__dirname, 'pages/index.vue')
+      })
     }
   },
 }
